@@ -1,0 +1,7 @@
+{
+  "name": "MG_App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
