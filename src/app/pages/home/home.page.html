@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div slot="start" class="menu-logo">
+    <ion-title>Logo</ion-title>
+    </div>
+    <div slot="end" class="notification">
+      <ion-select [(ngModel)]="selectedCity" placeholder="Select City">
+        <ion-select-option *ngFor="let city of cities" [value]="city">
+          {{ city }}
+        </ion-select-option>
+      </ion-select>
+      <ion-icon name="notifications"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="search">
+  <ion-searchbar placeholder="Search for hall"></ion-searchbar>
+  <ion-icon name="mic-circle"></ion-icon>
+  </div>
+
+  <ion-row>
+    <ion-col>
+      <swiper-container class="gallery-swipe-container" [spaceBetween]="10" [slidesPerView]="1" [pagination]="true" [loop]="true">
+    <swiper-slide>
+      <ion-card>
+        <img class="card-img" src="assets/images/party-hall1.jpeg" />
+        <div class="ion-card-content">
+          <ion-card-header>
+          <ion-card-title>Party Hall</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Book our Party hall now and get 10% offer on your total booking amount.<br>
+          Offer Valid Until (12-05-2023)
+          <ion-button color="warning" expand="block" [routerLink]="['/venue-details']">Book now</ion-button>
+        </ion-card-content>
+        </div>
+      </ion-card>
+    </swiper-slide>
+   </swiper-container>
+  </ion-col>
+  </ion-row>
+
+  <ion-row class="slider-row">
+    <ion-col>
+      <p>Venue Categories</p>
+
+      <div class="slider-img">        
+        <img src="assets/images/party-hall1.jpeg" />
+        <img src="assets/images/party-hall2.jpeg" />
+        <img src="assets/images/party-hall2.jpeg" />
+        <img src="assets/images/party-hall1.jpeg" />
+        <img src="assets/images/party-hall2.jpeg" />
+        <img src="assets/images/party-hall1.jpeg" />
+        <img src="assets/images/party-hall1.jpeg" />
+        <img src="assets/images/party-hall2.jpeg" />
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>
