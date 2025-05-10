@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div slot="start" class="menu-logo">
-    <ion-title>Logo</ion-title>
+    <ion-title>Event Plaza</ion-title>
     </div>
     <div slot="end" class="notification">
       <ion-select [(ngModel)]="selectedCity" placeholder="Select City">
@@ -22,10 +22,10 @@
 
   <ion-row>
     <ion-col>
-      <swiper-container class="gallery-swipe-container" [spaceBetween]="10" [slidesPerView]="1" [pagination]="true" [loop]="true">
+      <!-- <swiper-container class="gallery-swipe-container" [spaceBetween]="10" [slidesPerView]="1" [pagination]="true" [loop]="true">
     <swiper-slide>
       <ion-card>
-        <img class="card-img" src="assets/images/party-hall1.jpeg" />
+        <img class="card-img" src="assets/images/hall.jpeg" />
         <div class="ion-card-content">
           <ion-card-header>
           <ion-card-title>Party Hall</ion-card-title>
@@ -33,29 +33,79 @@
         <ion-card-content>
           Book our Party hall now and get 10% offer on your total booking amount.<br>
           Offer Valid Until (12-05-2023)
-          <ion-button color="warning" expand="block" [routerLink]="['/venue-details']">Book now</ion-button>
+          <ion-button col expand="block" [routerLink]="['/venue-details']">Book Now</ion-button>
         </ion-card-content>
         </div>
       </ion-card>
     </swiper-slide>
-   </swiper-container>
+  </swiper-container> -->
+  <div class="slider-wrapper">
+    <div
+      class="slide-track"
+      [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+      [style.transition]="'transform 0.4s ease'"
+    >
+      <div
+        class="slide-card"
+        *ngFor="let slide of slides"
+        (mouseenter)="nextSlide()"
+      >
+        <img [src]="slide.img" class="background-img" />
+        <div class="slide-content">
+          <div class="content">
+          <h2>{{ slide.title }}</h2>
+          <p class="para">{{ slide.desc }}</p>
+          <p class="valid">Offer Valid Until ({{ slide.validUntil }})</p>
+          </div>
+          <br />
+          <br />
+          <div class="book-btn">
+          <ion-button expand="block" (click)="venueDetails($event, slide)">Book now</ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+      <div
+        *ngFor="let slide of slides; let i = index"
+        class="dot"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+      ></div>
+    </div>
+  </div>
+
+  
   </ion-col>
   </ion-row>
 
-  <ion-row class="slider-row">
-    <ion-col>
-      <p>Venue Categories</p>
-
-      <div class="slider-img">        
-        <img src="assets/images/party-hall1.jpeg" />
-        <img src="assets/images/party-hall2.jpeg" />
-        <img src="assets/images/party-hall2.jpeg" />
-        <img src="assets/images/party-hall1.jpeg" />
-        <img src="assets/images/party-hall2.jpeg" />
-        <img src="assets/images/party-hall1.jpeg" />
-        <img src="assets/images/party-hall1.jpeg" />
-        <img src="assets/images/party-hall2.jpeg" />
+  <div class="slider-row">
+    <div class="ion-col">
+      <p class="slider-title">Venue Categories</p>
+      <div class="slider-img">
+        <div class="img" *ngFor="let venue of venueCategories">
+          <img [src]="venue.img" alt="{{ venue.label }}" />
+          <p>{{ venue.label }}</p>
+        </div>
       </div>
-    </ion-col>
-  </ion-row>
+    </div>
+  </div>
+
+
+  <div class="featured-venues">
+    <p class="section-title">Featured Venues</p>
+    <div class="venue-scroll">
+      <div class="venue-card" *ngFor="let venue of featuredVenues">
+        <div class="image-wrapper">
+          <img [src]="venue.img" alt="{{ venue.name }}" />
+          <div class="rating">{{ venue.rating }}</div>
+          <div class="heart">♡</div>
+        </div>
+        <p class="venue-name">{{ venue.name }}</p>
+      </div>
+    </div>
+  </div>
+  
 </ion-content>

@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.route.navigate(['/home']);
+    this.route.navigate(['/tabs/home']);
   }
 
 }

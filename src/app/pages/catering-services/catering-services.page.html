@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="ion-toolbar-content">
+      <ion-icon name="arrow-back" [routerLink]="['/venue-details']"></ion-icon>
+      <ion-title>Catering Services </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <div class="top-content">
+  <div class="all">
+    <p>All</p></div>
+  <div class="all"> <p>Appetizers</p></div>
+  <div class="all"><p>Main Course</p></div>
+  <div class="all"><p>Side Dish</p></div>
+ </div>
+
+ <div class="head">
+  <p>Desserts: रु75</p>
+ </div>
+
+ <div class="item-list">
+  <div class="item-row" *ngFor="let item of dessertItems">
+    <img [src]="item.img" />
+    <div class="item-details">
+      <p class="name">{{ item.name }}</p>
+      <p class="price">₹{{ item.price }} / Person</p>
+    </div>
+    <ion-checkbox></ion-checkbox>
+  </div>
+</div>
+
+</ion-content>
+
+<ion-footer class="footer-fixed">
+  <div class="footer-actions">
+    <ion-button fill="outline" color="medium">Cancel All</ion-button>
+    <ion-button color="warning">Add to Cart</ion-button>
+  </div>
+</ion-footer>
