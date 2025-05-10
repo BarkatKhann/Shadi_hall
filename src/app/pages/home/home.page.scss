@@ -1,89 +1,305 @@
 ion-toolbar {
+  display: flex;
+  align-items: center;
+
+  .menu-logo {
     display: flex;
     align-items: center;
 
-    .menu-logo {
-        display: flex;
-        align-items: center;
-
-        ion-icon {
-            font-size: 40px;
-        }
+    ion-icon {
+      font-size: 40px;
     }
+  }
 
-    .notification {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding-right: 10px;
+  .notification {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 10px;
 
-        ion-icon {
-            font-size: 30px;
-        }
+    ion-icon {
+      font-size: 30px;
+      color: #0F0E47;
     }
+  }
 
-    ion-select-option:focus {
-        border-bottom: none;
-    }
+  ion-select-option:focus {
+    border-bottom: none;
+  }
 }
 
 ion-content {
-    .search {
-        display: flex;
-        margin: 15px;
-        font-size: 50px;
-        align-items: center;
+  .search {
+    display: flex;
+    margin: 15px;
+    font-size: 50px;
+    align-items: center;
 
-        ion-searchbar {
-            --border: 1px solid gray;
-            --border-radius: 20px;
-        }
+    ion-searchbar {
+      --border: 1px solid gray;
+      --border-radius: 20px;
     }
 
-    ion-card {
-        .card-img {
-            position: relative;
-            opacity: 0.85;
+    ion-icon {
+      color: #0F0E47;
+    }
+  }
+
+  ion-card {
+    height: 200px;
+
+    .card-img {
+      position: relative;
+      // opacity: 0.85;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ion-card-content {
+      position: absolute;
+      top: 0px;
+      color: white;
+    }
+
+    ion-card-title {
+      font-weight: 700;
+      font-size: 20px;
+      color: white;
+    }
+
+    ion-card-header {
+      font-weight: 600;
+    }
+
+    ion-card-content {
+      font-size: 16px;
+
+      ion-button {
+        margin-top: 25px;
+        width: 35%;
+        text-transform: none;
+        font-size: 14px;
+        --border-radius: 12px;
+        --background: #0F0E47;
+      }
+    }
+  }
+
+  .slider-row {
+    background: #8686AC;
+
+    .ion-col {
+      .slider-title {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        padding-left: 13px;
+        padding-top: 12px;
+        border-radius: 5px;
+      }
+
+      .slider-img {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        margin-top: 15px;
+        padding-bottom: 10px;
+
+        .img {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 120px; 
+
+          img {
+            width: 110px; 
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          p {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+
+
+  .featured-venues {
+    padding: 15px;
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .venue-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+
+      .venue-card {
+        min-width: 180px;
+        border: 1px solid #9a9a9a;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        .image-wrapper {
+          position: relative;
+          width: 100%;
+          height: 120px;
+          overflow: hidden;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+
+          img {
             width: 100%;
             height: 100%;
-        }
+            padding: 5px;
+            border-radius: 10px;
+            object-fit: cover;
+          }
 
-        .ion-card-content {
+          .rating {
             position: absolute;
-            top: 0px;
+            top: 8px;
+            right: 8px;
+            background-color: #27c55d;
             color: white;
-        }
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 12px;
+          }
 
-        ion-card-title {
-            font-weight: 600;
+          .heart {
+            position: absolute;
+            top: 8px;
+            left: 8px;
             color: white;
-        }
-
-        ion-card-header {
-            font-weight: 600;
-        }
-
-        ion-card-content {
-            ion-button {
-                width: 40%;
-            }
-        }
-    }
-
-    .slider-row {
-        padding: 10px;
-
-        .slider-img {
+            background: #0F0E47;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
             display: flex;
-            overflow-x: scroll;
-            gap: 20px;
-
-            img {
-                border-radius: 50%;
-                height: 80px;
-                width: 80px;
-            }
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+          }
         }
-    }
 
+        .venue-name {
+          padding: 8px;
+          font-size: 14px;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide-track {
+  display: flex;
+  width: 100%;
+}
+
+.slide-card {
+  min-width: 100%;
+  height: 220px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: white;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  box-sizing: border-box;
+}
+.slide-content h2{
+  font-weight: 600;
+}
+
+.slide-content h2,
+.slide-content .para,
+.slide-content .valid {
+  margin: 0 0 6px 0;
+}
+
+.book-btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+ion-button {
+  color: white;
+--background: #0F0E47;
+text-transform: none;
+}
+
+
+
+
+.slide-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #0F0E47;
 }

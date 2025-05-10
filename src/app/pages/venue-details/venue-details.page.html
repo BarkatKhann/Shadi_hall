@@ -2,7 +2,7 @@
   <ion-toolbar>
     <div class="ion-toolbar">
       <div class="ion-toolbar-content">
-        <ion-icon name="arrow-back" [routerLink]="['/home']"></ion-icon>
+        <ion-icon name="arrow-back" [routerLink]="['/tabs/home']"></ion-icon>
         <ion-title>Venue-details</ion-title>
       </div>
       <div class="wishlist">
@@ -121,34 +121,94 @@
 
   <div class="additional-services">
     <p class="para">Additional Services</p>
-
+  
     <div class="additional-services-content">
-      <ion-item>
+      <ion-item *ngFor="let service of additionalServices">
         <div class="items">
           <div class="img">
-            <img src="assets/images/party-hall1.jpeg" />
+            <img [src]="service.img" />
             <div class="content">
-              <p class="para">Catering Services</p>
-              <p class="professionals">50 Professionals</p>
-              <p class="veg-nonVeg">Veg: 25</p>
+              <p class="para">{{ service.title }}</p>
+              <p class="professionals">{{ service.professionals }}</p>
+              <p class="veg-nonVeg" *ngIf="service.veg">{{ service.veg }}</p>
             </div>
           </div>
-          <ion-button>View</ion-button>
+          <div class="view-btn">
+            <ion-button [routerLink]="['/catering-services']">View</ion-button>
+          </div>
         </div>
       </ion-item>
+    </div>
+  </div>
+  
 
-      <ion-item>
-        <div class="items">
-          <div class="img">
-            <img src="assets/images/party-hall1.jpeg" />
-            <div class="content">
-              <p class="para">PhotoGrapher</p>
-              <p class="professionals">50 Professionals</p>
-            </div>
-          </div>
-          <ion-button>View</ion-button>
-        </div>
-      </ion-item>
+  <div class="reviews-ratings">
+    <p class="para">Reviews & Ratings</p>
+
+
+    <div class="main-div">
+      <div class="img">
+        <img src="assets/images/girl.jpg" />
+      </div>
+      <div class="content">
+        <p class="name">Anamika Saha</p>
+        <p class="para">Reviewed 10days ago</p>
+      </div>
+      <div class="rating">
+        <ion-icon name="star"></ion-icon>
+        <span class="number">4.5</span>
+      </div>
+    </div>
+    <div class="content-para">
+      <p>Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web
+        development. Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web
+        development. Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web
+        development.</p>
+    </div>
+
+    <div class="see-review">
+      <button>See All Reviews</button>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="galleries">
+    <p class="para">Galleries</p>
+
+    <div class="scrollable-images">
+      <div class="images">
+        <img src="assets/images/image1.jpeg" />
+        <img src="assets/images/image2.jpeg" />
+        <img src="assets/images/image3.jpg" />
+        <img src="assets/images/image4.jpg" />
+        <img src="assets/images/image5.jpeg" />
+        <img src="assets/images/image6.jpg" />
+        <img src="assets/images/image7.jpg" />
+      </div>
+
+      <div class="see-photos">
+        <button>See All Photos</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <div class="left">
+      <div class="whatsapp">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </div>
+      <div class="call">
+        <ion-icon name="call"></ion-icon>
+      </div>
+    </div>
+
+    <div class="book-now">
+      <ion-button>Book Now</ion-button>
     </div>
   </div>
 </ion-content>

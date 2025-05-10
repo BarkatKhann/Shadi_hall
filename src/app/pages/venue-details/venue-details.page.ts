@@ -18,6 +18,32 @@ export class VenueDetailsPage implements OnInit {
     { title: 'Price', perDay: "Full Day", price : "₹ 300000" }
   ];
 
+  additionalServices = [
+    {
+      img: 'assets/images/party-hall2.jpeg',
+      title: 'Catering Services',
+      professionals: '50 Professionals',
+      veg: 'Veg: 25'
+    },
+    {
+      img: 'assets/images/party-hall1.jpeg',
+      title: 'PhotoGrapher',
+      professionals: '50 Professionals'
+    },
+    {
+      img: 'assets/images/party-hall3.jpeg',
+      title: 'Catering Services',
+      professionals: '50 Professionals',
+      veg: 'Veg: 25'
+    },
+    {
+      img: 'assets/images/party-hall4.jpeg',
+      title: 'PhotoGrapher',
+      professionals: '50 Professionals'
+    }
+  ];
+  
+
   constructor() {
     this.generateDates();
   }
