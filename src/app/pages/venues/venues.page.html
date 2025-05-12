@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="ion-toolbar">
+      <ion-title>Venues</ion-title>
+     <ion-icon name="options-outline"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="search">
+  <ion-searchbar placeholder="Search for hall"></ion-searchbar>
+  <ion-icon name="mic-circle"></ion-icon>
+  </div>
+
+  <div class="category-tags">
+    <div
+      class="tag"
+      *ngFor="let category of categories; let i = index"
+      [class.active]="selectedIndex === i"
+      (click)="selectCategory(i)"
+    >
+      {{ category }}
+    </div>
+  </div>
+
+  <div class="venue-list">
+  <div class="venue-card" *ngFor="let venue of venues">
+    <div class="image-container">
+      <img [src]="venue.image" alt="venue" />
+      <ion-icon name="heart-outline" class="favorite-icon"></ion-icon>
+      <div class="rating-badge">
+        <ion-icon name="star"></ion-icon> {{ venue.rating }}
+      </div>
+    </div>
+    <div class="venue-info">
+      <p class="title">{{ venue.name }}</p>
+      <div class="price-row">
+        <p class="price">₹ {{ venue.price }} / Day</p>
+        <ion-button size="small" class="book-btn">Book now</ion-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</ion-content>
