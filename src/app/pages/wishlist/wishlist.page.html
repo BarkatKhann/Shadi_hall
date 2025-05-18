@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Wishlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="wishlist-content">
+
+  <div class="chip-group">
+    <ion-button fill="clear" shape="round" class="add-btn">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+    <ion-chip
+      *ngFor="let filter of filters"
+      [class.selected]="selectedFilter === filter"
+      (click)="selectFilter(filter)">
+      {{ filter }}
+    </ion-chip>
+  </div>
+
+  <div *ngFor="let group of groupedWishlist">
+    <h5 class="section-title">{{ group.category }}</h5>
+    <div class="card-container">
+      <ion-card *ngFor="let item of group.items" class="wishlist-card">
+        <div class="img-container">
+          <img [src]="item.image" />
+          <ion-icon name="heart" class="heart-icon"></ion-icon>
+          <div class="rating">★ {{ item.rating }}</div>
+        </div>
+        <ion-card-content>
+          <h6>{{ item.title }}</h6>
+          <p>₹ {{ item.price }} / Day</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>
+
