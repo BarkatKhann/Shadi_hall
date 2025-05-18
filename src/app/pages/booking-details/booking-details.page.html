@@ -1,0 +1,114 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-toolbar">
+    <div class="ion-toolbar-content">
+      <ion-icon name="arrow-back" [routerLink]="['/venue-details']"></ion-icon>
+      <ion-title>Booking Details</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="booking-form">
+  <form>
+    <ion-item>
+      <ion-label position="stacked">Enter your Full name</ion-label>
+      <ion-input placeholder="Enter Name"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item class="ion-item">
+      <div>
+          <ion-label position="stacked">Enter your Full name</ion-label>
+      <ion-input placeholder="Enter Name"></ion-input>
+      </div>
+      <div>
+          <ion-label position="stacked">Event Date</ion-label>
+          <ion-input type="tel" placeholder="Event Date"></ion-input>
+      </div>
+    </ion-item> -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Mobile Number</ion-label>
+            <ion-input type="tel" placeholder="Enter Mobile Number"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-item lines="none">
+            <ion-label position="stacked">Event Date</ion-label>
+            <div class="custom-date">
+              <ion-input
+                readonly
+                [value]="selectedDate | date: 'dd MMM, yyyy'"
+                (click)="openDatePicker()"
+              ></ion-input>
+              <ion-icon name="calendar" class="calendar-icon"></ion-icon>
+            </div>
+            <!-- <ion-datetime
+          #datePicker
+          presentation="date"
+          (ionChange)="setDate($event)"
+          hidden
+        ></ion-datetime> -->
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <ion-label position="stacked">Email Address</ion-label>
+      <ion-input type="email" placeholder="Enter Email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Total Guest</ion-label>
+      <ion-input type="number" placeholder="250"></ion-input>
+    </ion-item>
+
+    <div class="event-type">
+      <ion-label position="stacked">Event Type</ion-label>
+    </div>
+    <ion-item lines="none" class="event-type-container">
+      <ion-radio-group>
+        <div class="event-type-group">
+          <div class="radio-option" *ngFor="let type of eventTypes">
+            <ion-radio [value]="type.value" class="custom-radio"></ion-radio>
+            <ion-label>{{ type.label }}</ion-label>
+          </div>
+        </div>
+      </ion-radio-group>
+    </ion-item>
+
+    <div class="event-time">
+      <ion-label position="stacked">Event Time</ion-label>
+    </div>
+
+    <ion-list>
+      <ion-radio-group value="evening">
+        <ion-item lines="none" class="ion-item">
+          <ion-label>Half Day - Morning (9:00AM - 2:00PM)</ion-label>
+          <ion-radio slot="start" value="morning"></ion-radio>
+        </ion-item>
+        <ion-item lines="none" class="ion-item">
+          <ion-label>Half Day - Evening (5:30PM - 11:30PM)</ion-label>
+          <ion-radio slot="start" value="evening"></ion-radio>
+        </ion-item>
+        <ion-item lines="none" class="ion-item">
+          <ion-label>Full Day - (9:00AM - 11:30PM)</ion-label>
+          <ion-radio slot="start" value="full"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <div class="section-label">Additional Services</div>
+    <div class="catering-service">
+      <ion-icon name="checkmark-circle" color="success" slot="start"></ion-icon>
+      <ion-label>Catering Service</ion-label>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-button [routerLink]="['/booking-summary']">View Summary</ion-button>
+</ion-footer>

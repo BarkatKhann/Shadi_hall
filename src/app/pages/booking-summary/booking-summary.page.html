@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-toolbar">
+    <div class="ion-toolbar-content">
+      <ion-icon name="arrow-back" [routerLink]="['/booking-details']"></ion-icon>
+      <ion-title>Booking Details</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <div class="card">
+  <div class="section">
+    <h3 class="section-title">User Details</h3>
+    <p class="name"><strong>Name :</strong> Dhinesh P &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Total Guest :</strong> 250</p>
+    <p><strong>Email ID :</strong> dhinesh.partha14</p>
+    <p><strong>Phone no :</strong> 9025615281</p>
+  </div>
+  <div class="section content">
+    <h3 class="section-title">Event Details</h3>
+    <p><strong>Type :</strong> Special Event</p>
+    <p><strong>Event Date :</strong> </p>
+    <p><strong>Event Time :</strong> Evening ( 5:30PM - 11:30PM )</p>
+    <p><strong>Address :</strong> Chennai</p>
+  </div>
+</div>
+
+
+<div class="section-titles">
+  <p>Additional Service :</p> <span>Catering Service</span>
+</div>
+
+<div class="category">
+  <div class="category-title">Appetizers</div>
+  
+  <div class="item-card">
+    <span class="status-dot red"></span>
+    <img src="assets/images/salad.jpeg" alt="Mini Chicken Satay">
+    <div class="item-info">
+      <div class="item-name">Mini Chicken Satay</div>
+      <div class="item-price">₹100 / Person</div>
+    </div>
+    <div class="check-icon"><ion-icon name="checkmark-outline"></ion-icon></div>
+  </div>
+
+  <div class="item-card">
+    <span class="status-dot green"></span>
+    <img src="assets/images/salad.jpeg" alt="Salad Skewers">
+    <div class="item-info">
+      <div class="item-name">Salad Skewers</div>
+      <div class="item-price">₹100 / Person</div>
+    </div>
+    <div class="check-icon"><ion-icon name="checkmark-outline"></ion-icon></div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-title">Main Course</div>
+
+  <div class="item-card">
+    <span class="status-dot red"></span>
+    <img src="assets/images/salad.jpeg" alt="Butter Chicken">
+    <div class="item-info">
+      <div class="item-name">Butter Chicken</div>
+      <div class="item-price">₹175 / Person</div>
+    </div>
+    <div class="check-icon"><ion-icon name="checkmark-outline"></ion-icon></div>
+  </div>
+
+  <div class="item-card">
+    <span class="status-dot green"></span>
+    <img src="assets/images/salad.jpeg" alt="Ricotta Ravioli">
+    <div class="item-info">
+      <div class="item-name">Ricotta Ravioli</div>
+      <div class="item-price">₹175 / Person</div>
+    </div>
+    <div class="check-icon"><ion-icon name="checkmark-outline"></ion-icon></div>
+  </div>
+</div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-button>Make Payment</ion-button>
+</ion-footer>

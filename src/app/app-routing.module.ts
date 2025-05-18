@@ -34,6 +34,18 @@ const routes: Routes = [
   {
     path: 'venues',
     loadChildren: () => import('./pages/venues/venues.module').then( m => m.VenuesPageModule)
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () => import('./pages/wishlist/wishlist.module').then( m => m.WishlistPageModule)
+  },
+  {
+    path: 'booking-details',
+    loadChildren: () => import('./pages/booking-details/booking-details.module').then( m => m.BookingDetailsPageModule)
+  },
+  {
+    path: 'booking-summary',
+    loadChildren: () => import('./pages/booking-summary/booking-summary.module').then( m => m.BookingSummaryPageModule)
   }
 
 

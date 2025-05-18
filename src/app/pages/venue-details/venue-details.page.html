@@ -196,8 +196,9 @@
     </div>
   </div>
 
+</ion-content>
 
-  <div class="footer">
+  <ion-footer class="footer">
     <div class="left">
       <div class="whatsapp">
         <ion-icon name="logo-whatsapp"></ion-icon>
@@ -208,7 +209,6 @@
     </div>
 
     <div class="book-now">
-      <ion-button>Book Now</ion-button>
+      <ion-button [routerLink]="['/booking-details']">Book Now</ion-button>
     </div>
-  </div>
-</ion-content>
+  </ion-footer>
