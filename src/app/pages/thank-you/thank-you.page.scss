@@ -1,0 +1,52 @@
+ion-content {
+    --background: var(--ion-color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    ion-icon {
+        color: white;
+        font-size: 10em;
+        margin-top: 25%;
+    }
+
+    .thank-you {
+        font-size: 2em;
+        color: white;
+        margin-bottom: 0.5em;
+    }
+
+    .congratulations p {
+        font-size: 1em;
+        color: white;
+        max-width: 80%;
+        margin: 0 auto 1em auto;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 15%;
+
+        ion-button {
+            --border-radius: 20px;
+            border-radius: 20px;
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .home {
+            --background: var(--ion-color-white);
+            color: var(--ion-color-primary);
+        }
+
+        .receipt {
+            border: 1px solid var(--ion-color-white);
+            --background: transparent;
+            color: var(--ion-color-white);
+        }
+    }
+}

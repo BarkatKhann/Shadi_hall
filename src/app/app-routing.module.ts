@@ -27,7 +27,8 @@ const routes: Routes = [
   {
     path: 'catering-services',
     loadChildren: () => import('./pages/catering-services/catering-services.module').then( m => m.CateringServicesPageModule)
-  },  {
+  },
+  {
     path: 'account',
     loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
   },
@@ -46,6 +47,14 @@ const routes: Routes = [
   {
     path: 'booking-summary',
     loadChildren: () => import('./pages/booking-summary/booking-summary.module').then( m => m.BookingSummaryPageModule)
+  },
+  {
+    path: 'thank-you',
+    loadChildren: () => import('./pages/thank-you/thank-you.module').then( m => m.ThankYouPageModule)
+  },
+  {
+    path: 'pay-now',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
   }
 
 

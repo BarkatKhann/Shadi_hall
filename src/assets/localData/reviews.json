@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "venue_id": 1,
+    "rating": 4.5,
+    "comment": "Great experience! The garden was clean and well managed.",
+    "created_at": "2025-06-16T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "venue_id": 2,
+    "rating": 4.0,
+    "comment": "The banquet was spacious and staff was friendly.",
+    "created_at": "2025-07-11T14:30:00Z"
+  },
+  {
+    "id": 3,
+    "user_id": 2,
+    "venue_id": 1,
+    "rating": 3.5,
+    "comment": "Nice venue, but parking space was limited.",
+    "created_at": "2025-06-20T08:45:00Z"
+  }
+]

@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="ion-toolbar">
+      <div class="ion-toolbar-content">
+        <ion-icon name="arrow-back" [routerLink]="['/booking-summary']"></ion-icon>
+        <ion-title>Payment</ion-title>
+      </div>
+
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="title">
+    <p>Payment Methods</p>
+  </div>
+
+<ion-radio-group [(ngModel)]="selectedPaymentMethod">
+  <!-- Credit Card Option -->
+  <div [ngClass]="{'method-box': true, 'selected': selectedPaymentMethod === 'credit-card'}">
+    <ion-item lines="none">
+      <ion-icon slot="start" name="card"></ion-icon>
+      <ion-label>Credit Card</ion-label>
+      <ion-radio slot="end" value="credit-card"></ion-radio>
+    </ion-item>
+
+    <!-- Show card info if selected -->
+    <div *ngIf="selectedPaymentMethod === 'credit-card'" class="card-info">
+      <ion-item lines="none">
+        <ion-input placeholder="4675 5896 2548 9548" type="text"></ion-input>
+      </ion-item>
+      <div class="card-row">
+        <ion-input placeholder="MM/YY" type="text"></ion-input>
+        <ion-input placeholder="CVC" type="text"></ion-input>
+      </div>
+    </div>
+  </div>
+
+  <!-- PayPal Option -->
+  <div [ngClass]="{'method-box': true, 'selected': selectedPaymentMethod === 'paypal'}">
+    <ion-item lines="none">
+      <ion-icon slot="start" name="logo-paypal"></ion-icon>
+      <ion-label>PayPal</ion-label>
+      <ion-radio slot="end" value="paypal"></ion-radio>
+    </ion-item>
+  </div>
+
+  <!-- Google Pay Option -->
+  <div [ngClass]="{'method-box': true, 'selected': selectedPaymentMethod === 'google-pay'}">
+    <ion-item lines="none">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      <ion-label>Google Pay</ion-label>
+      <ion-radio slot="end" value="google-pay"></ion-radio>
+    </ion-item>
+  </div>
+</ion-radio-group>
+
+
+</ion-content>
+
+<ion-footer>
+
+  <div class="payment-footer">
+  <h2>Payment Details</h2>
+  <div class="detail-row">
+    <span>Hall Rent</span>
+    <span>₹200000</span>
+  </div>
+  <div class="detail-row">
+    <span>Catering Services</span>
+    <div class="right-column">
+      <span>₹125000</span>
+      <a class="additional-link" href="#">Additional</a>
+      <span class="per-guest">₹500/guest</span>
+    </div>
+  </div>
+
+  <div class="total-row">
+    <strong>Total Amount</strong>
+    <strong>₹325,000</strong>
+  </div>
+
+  <!-- <ion-button expand="block">Pay now</ion-button> -->
+  <ion-button expand="block" class="pay-now" [routerLink]="['/thank-you']">Pay Now</ion-button>
+</div>
+
+
+
+</ion-footer>

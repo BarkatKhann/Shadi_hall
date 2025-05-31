@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "booking_id": 1,
+    "payment_method": "credit_card",
+    "amount": 120000,
+    "payment_status": "paid",
+    "transaction_id": "TXN001",
+    "payment_date": "2025-05-10T09:05:00Z"
+  },
+  {
+    "id": 2,
+    "booking_id": 2,
+    "payment_method": "upi",
+    "amount": 90000,
+    "payment_status": "pending",
+    "transaction_id": "TXN002",
+    "payment_date": "2025-05-12T10:35:00Z"
+  }
+]
