@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "title": "Booking Confirmed",
+    "message": "Your booking at Garden Palace is confirmed.",
+    "type": "booking",
+    "is_read": false,
+    "created_at": "2025-05-10T09:06:00Z"
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "title": "Booking Pending",
+    "message": "Your booking at Royal Banquet is pending.",
+    "type": "booking",
+    "is_read": false,
+    "created_at": "2025-05-12T10:36:00Z"
+  }
+]

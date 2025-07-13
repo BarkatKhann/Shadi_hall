@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true" class="authContent">
+  <h2> Event Hub</h2>
+  <ion-grid>
+    <h5>OTP Verifiaction</h5>
+    <ng-template [hidden]="true">
+      <p class="mb0">Enter the OTP sent to your Mobile number</p>
+      <ion-input-otp>
+        <p class="mt0">Resend OTP in 45s</p>
+        <ion-button>
+          Verify
+        </ion-button>
+      </ion-input-otp>
+      <br>
+    </ng-template>
+    <p class="mb0">Enter the OTP sent to your email address</p>
+    <ion-input-otp>
+      <p class="mt0">Resend OTP in 45s</p>
+      <ion-button (click)="emailOtpVerify()">
+        Verify
+      </ion-button>
+    </ion-input-otp>
+  </ion-grid>
+
+</ion-content>

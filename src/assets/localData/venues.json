@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "provider_id": 3,
+    "name": "Garden Palace",
+    "description": "Beautiful open garden with lights and dining area.",
+    "location": "New Delhi",
+    "capacity": 300,
+    "price": 120000,
+    "category_id": 1,
+    "status": "available",
+    "created_at": "2025-05-03T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "provider_id": 4,
+    "name": "Royal Banquet",
+    "description": "Luxury indoor hall with AC and music system.",
+    "location": "Mumbai",
+    "capacity": 200,
+    "price": 90000,
+    "category_id": 2,
+    "status": "available",
+    "created_at": "2025-05-03T13:00:00Z"
+  }
+]

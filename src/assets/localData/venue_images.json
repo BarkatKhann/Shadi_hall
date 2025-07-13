@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "venue_id": 1,
+    "image_url": "https://example.com/images/garden_palace_1.jpg",
+    "uploaded_at": "2025-05-03T12:05:00Z"
+  },
+  {
+    "id": 2,
+    "venue_id": 1,
+    "image_url": "https://example.com/images/garden_palace_2.jpg",
+    "uploaded_at": "2025-05-03T12:10:00Z"
+  },
+  {
+    "id": 3,
+    "venue_id": 2,
+    "image_url": "https://example.com/images/royal_banquet_1.jpg",
+    "uploaded_at": "2025-05-03T13:10:00Z"
+  },
+  {
+    "id": 4,
+    "venue_id": 2,
+    "image_url": "https://example.com/images/royal_banquet_2.jpg",
+    "uploaded_at": "2025-05-03T13:15:00Z"
+  }
+]

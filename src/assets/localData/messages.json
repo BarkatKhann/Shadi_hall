@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "chat_id": 1,
+    "sender_id": 1,
+    "message": "Hi, is Garden Palace available for June 15th?",
+    "sent_at": "2025-05-05T15:01:00Z",
+    "is_read": true
+  },
+  {
+    "id": 2,
+    "chat_id": 1,
+    "sender_id": 3,
+    "message": "Yes, it's available. You can book it now.",
+    "sent_at": "2025-05-05T15:02:30Z",
+    "is_read": false
+  },
+  {
+    "id": 3,
+    "chat_id": 2,
+    "sender_id": 2,
+    "message": "Hello, is Royal Banquet open in July?",
+    "sent_at": "2025-05-07T11:21:00Z",
+    "is_read": true
+  },
+  {
+    "id": 4,
+    "chat_id": 2,
+    "sender_id": 4,
+    "message": "Yes! We have slots available on most dates.",
+    "sent_at": "2025-05-07T11:23:00Z",
+    "is_read": false
+  }
+]

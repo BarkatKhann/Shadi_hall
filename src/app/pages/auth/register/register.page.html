@@ -1,0 +1,112 @@
+<ion-content class="authContent">
+  <h2>Event Hub</h2>
+  <ion-grid>
+    <h5>Sign In</h5>
+    <form [formGroup]="registerForm">
+      <div class="item-div">
+        <ion-item>
+          <ion-label position="stacked">Name</ion-label>
+          <ion-input type='text' formControlName="name" placeholder="Enter Name"></ion-input>
+        </ion-item>
+        <div class="errMsg" *ngIf="formControl.name.errors && formControl.name.touched">
+          <p *ngIf="formControl.name.errors?.required && !formControl.name.errors?.invalidName
+          && !formControl.name.errors?.minlength && !formControl.name.errors?.maxlength">
+            Name is reqired
+          </p>
+          <p *ngIf="!formControl.name.errors?.required
+         && formControl.name.errors?.minlength">
+            Name must be at least 3 characters
+          </p>
+          <p *ngIf="!formControl.name.errors?.required && formControl.name.errors?.maxlength">
+            Name must be at most 20 characters
+          </p>
+          <p *ngIf="!formControl.name.errors?.required && formControl.name.errors?.invalidName
+          && !formControl.name.errors?.minlength && !formControl.name.errors?.maxlength">
+            Number not allow
+          </p>
+        </div>
+      </div>
+      <div class="item-div">
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input formControlName="email" placeholder="Enter Email"></ion-input>
+        </ion-item>
+        <div class="errMsg" *ngIf="formControl.email.errors && formControl.email.touched">
+          <p *ngIf="formControl.email.errors?.required">
+            Email is reqired
+          </p>
+          <p *ngIf="formControl.email.errors?.inValidMail">
+           Please enter a valid email address.
+          </p>
+        </div>
+      </div>
+      <div class="item-div">
+        <ion-item>
+          <ion-label position="stacked">Phone Number</ion-label>
+          <ion-input type="number" formControlName="phone" placeholder="Enter Phone Number "></ion-input>
+        </ion-item>
+        <div class="errMsg" *ngIf="formControl.phone.errors && formControl.phone.touched">
+          <p *ngIf="formControl.phone.errors?.required">
+            Phone number is reqired
+          </p>
+           <p *ngIf="!formControl.phone.errors?.required
+         && formControl.phone.errors?.minlength">
+            Phone number must be at least 10 characters
+          </p>
+          <p *ngIf="!formControl.phone.errors?.required && formControl.phone.errors?.maxlength">
+            Phone number must be at most 10 characters
+          </p>
+          <p *ngIf="!formControl.phone.errors?.required && formControl.phone.errors?.invalidMobile
+          && !formControl.phone.errors?.minlength && !formControl.phone.errors?.maxlength">
+            Phone number not valid
+          </p>
+        </div>
+      </div>
+      <div class="item-div">
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input formControlName="Psw" placeholder="Enter Password">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <div class="errMsg" *ngIf="formControl.Psw.errors && formControl.Psw.touched">
+          <p *ngIf="formControl.Psw.errors?.required">
+            Password is reqired
+          </p>
+          <p *ngIf="formControl.Psw.errors?.minlength">
+            Phone number must be at least 6 characters
+          </p>
+        </div>
+      </div>
+      <div class="item-div">
+        <ion-item>
+          <ion-label position="stacked">Confirm Password</ion-label>
+          <ion-input formControlName="cPsw" placeholder="Enter Confirm Password">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <div class="errMsg" *ngIf="formControl.cPsw.errors && formControl.cPsw.touched">
+          <p *ngIf="formControl.cPsw.errors?.required">
+            Email is reqired
+          </p>
+          <p *ngIf="formControl.cPsw.errors?.passwordMismatch">
+           Passwords do not match
+          </p>
+        </div>
+      </div>
+    </form>
+    <ion-button (click)="RegisterUser()">Sign In</ion-button>
+    <p class="ion-text-center">Don't have an account? <span (click)="goToLogin()">Sign up</span></p>
+    <div class="divider">
+      <h6>or</h6>
+    </div>
+    <ion-row class="social">
+      <div class="social-div">
+        <ion-icon name="logo-google"></ion-icon>
+      </div>
+      <div class="social-div">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

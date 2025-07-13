@@ -1,0 +1,26 @@
+<div class="header-div">
+  <ion-icon (click)="close()" name="close-outline"></ion-icon>
+</div>
+<ion-grid >
+  <h4 class="ion-text-center">
+    Are you a user or Provider?
+  </h4>
+      <ion-radio-group [value]="selectedOption">
+        <ion-row>
+          <ion-col size="6">
+            <div class="option-card" [class.selected]="selectedOption==='user'" (click)="selectOption('user')">
+              <img src="assets/images/man.png" alt="">
+            </div>
+            <ion-radio slot="end" value="user"></ion-radio>
+          </ion-col>
+          <ion-col size="6">
+            <div class="option-card" [class.selected]="selectedOption==='provider'" (click)="selectOption('provider')">
+              <img src="assets/images/wedding.png" alt="">
+            </div>
+            <ion-radio slot="end" value="provider"></ion-radio>
+          </ion-col>
+        </ion-row>
+</ion-radio-group>
+
+  <ion-button (click)="continue()">Continue</ion-button>
+</ion-grid>
