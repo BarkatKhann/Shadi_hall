@@ -1,0 +1,76 @@
+<!-- <ion-content>
+  <div class="pageTitle">
+    <h2 class="fSize24 bold6">Create an account</h2>
+    <p class="fSize14">Enter you email and password to log in.</p>
+  </div>
+  <ion-grid>
+    <ion-list>
+      <ion-label>Email</ion-label>
+      <ion-item>
+        <ion-input placeholder="Enter email"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-label>Password</ion-label>
+      <ion-item>
+        <ion-input type="password" placeholder="Enter password">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <p class="ForgotP">Forgot password?</p>
+    <ion-button>Log in</ion-button>
+         <h3 class="divider"><span>{{'or'}}</span></h3>
+    <ion-button fill="outline" (click)="requestConsentInfo()">
+      <ion-icon name="logo-google"></ion-icon>
+      <p>
+       Continue with Google
+      </p>
+    </ion-button>
+    <ion-button fill="outline" (click)="showConsentForm()">
+      <ion-icon name="logo-facebook"></ion-icon>
+      <p>
+        Continue with Facebook
+      </p>
+    </ion-button>
+    <h5>Don't have an account? <a>Sign up</a></h5>
+  </ion-grid>
+</ion-content> -->
+
+<ion-content class="authContent">
+  <h2>Event Hub</h2>
+  <ion-grid>
+    <h5>Sign In</h5>
+    <form>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input placeholder="Enter Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input placeholder="Enter Password"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input placeholder="Enter Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input placeholder="Enter Email"></ion-input>
+      </ion-item> -->
+    </form>
+    <p (click)="goToForgotPsw()">Forgot password?</p>
+    <ion-button (click)="loader()">Sign In</ion-button>
+    <p class="ion-text-center">Don't have an account? <span (click)="goToRegister()">Sign up</span></p>
+    <div class="divider">
+      <h6>or</h6>
+    </div>
+    <ion-row class="social">
+      <div class="social-div">
+        <ion-icon name="logo-google"></ion-icon>
+      </div>
+      <div class="social-div">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </div>
+    </ion-row>
+  </ion-grid>

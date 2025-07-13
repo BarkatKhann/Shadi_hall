@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl:'http://localhost:8080/user',
+  adMobIosAdId:'',
+  adMobAndroidAdId:'ca-app-pub-1900198453500216~6169900448',
+  localData:true
 };
 
 /*

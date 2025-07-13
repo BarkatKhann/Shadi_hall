@@ -2,9 +2,14 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/home',
+  //   pathMatch: 'full'
+  // },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -13,8 +18,8 @@ const routes: Routes = [
       import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: '',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    path: 'login',
+    loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'tabs/home',
@@ -55,7 +60,29 @@ const routes: Routes = [
   {
     path: 'pay-now',
     loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
-  }
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'login',
+    // loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'otp-verification',
+    loadChildren: () => import('./pages/auth/otp-verification/otp-verification.module').then( m => m.OtpVerificationPageModule)
+  },  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'set-password',
+    loadChildren: () => import('./pages/auth/set-password/set-password.module').then( m => m.SetPasswordPageModule)
+  },
+
+
 
 
 ];

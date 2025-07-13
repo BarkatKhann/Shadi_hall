@@ -18,7 +18,8 @@ import { provideHttpClient } from '@angular/common/http';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
+
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
