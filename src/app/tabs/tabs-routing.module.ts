@@ -9,32 +9,35 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        // loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule),
-        loadChildren: () => import('../pages/home/home.module').then(m => m.HomePageModule)
+        loadChildren: () => import('../pages/user/home/home.module').then(m => m.HomePageModule),
       },
       {
         path: 'wishlist',
-        loadChildren: () => import('../pages/wishlist/wishlist.module').then(m => m.WishlistPageModule)
+        loadChildren: () => import('../pages/user/wishlist/wishlist.module').then(m => m.WishlistPageModule)
       },
       {
         path: 'venue',
-        loadChildren: () => import('../pages/venues/venues.module').then(m => m.VenuesPageModule)
+        loadChildren: () => import('../pages/user/venues/venues.module').then(m => m.VenuesPageModule)
       },
       {
         path: 'account',
-        loadChildren: () => import('../pages/account/account.module').then(m => m.AccountPageModule)
+        loadChildren: () => import('../pages/user/account/account.module').then(m => m.AccountPageModule)
       },
-     
+      {
+        path: 'dashboard',
+        loadChildren: () => import('../pages/provider/dashboard/dashboard.module').then(m => m.DashboardPageModule)
+      },
+
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: 'home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: 'tabs/home',
     pathMatch: 'full'
   }
 ];
@@ -42,4 +45,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

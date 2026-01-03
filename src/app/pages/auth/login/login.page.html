@@ -41,26 +41,38 @@
   <h2>Event Hub</h2>
   <ion-grid>
     <h5>Sign In</h5>
-    <form>
-      <ion-item>
-        <ion-label position="stacked">Email</ion-label>
-        <ion-input placeholder="Enter Email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Password</ion-label>
-        <ion-input placeholder="Enter Password"></ion-input>
-      </ion-item>
-      <!-- <ion-item>
-        <ion-label position="stacked">Email</ion-label>
-        <ion-input placeholder="Enter Email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Email</ion-label>
-        <ion-input placeholder="Enter Email"></ion-input>
-      </ion-item> -->
+    <form [formGroup]="loginForm">
+      <div class="item-div">
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input type="email" placeholder="Enter Email" formControlName="email"></ion-input>
+        </ion-item>
+        <div class="errMsg" *ngIf="formControl.email.errors && formControl.email.touched">
+            <p *ngIf="formControl.email.errors?.required">
+              Email is reqired
+            </p>
+            <p *ngIf="formControl.email.errors?.invalidEmail">
+             Please enter a valid email address.
+            </p>
+        </div>
+      </div>
+      <div class="item-div">
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input placeholder="Enter Password" formControlName="Psw"></ion-input>
+        </ion-item>
+        <div class="errMsg" *ngIf="formControl.Psw.errors && formControl.Psw.touched">
+          <p *ngIf="formControl.Psw.errors?.required">
+            Password is reqired
+          </p>
+          <p *ngIf="formControl.Psw.errors?.minlength">
+            Phone number must be at least 6 characters
+          </p>   
+        </div>
+      </div>
     </form>
     <p (click)="goToForgotPsw()">Forgot password?</p>
-    <ion-button (click)="loader()">Sign In</ion-button>
+    <ion-button (click)="login()">Sign In</ion-button>
     <p class="ion-text-center">Don't have an account? <span (click)="goToRegister()">Sign up</span></p>
     <div class="divider">
       <h6>or</h6>

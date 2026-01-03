@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{HeaderData.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment [scrollable]="true" [value]="HeaderData.selectedSubHeader" class="ion-padding"
+    (ionChange)="changeSegment($event)">
+    <ion-segment-button [value]="segment.name"
+      *ngFor="let segment of HeaderData.subHeader">{{segment.name}}</ion-segment-button>
+  </ion-segment>
+  <ion-grid class="venue-section">
+    <ion-card class="ion-padding" *ngFor="let itm of itemData">
+      <img [src]="itm.images[0]" class="imgClass" alt="">
+      <ion-row>
+        <div class="title-content">
+          <h6>{{itm.name}}</h6>
+          <p>{{itm.base_price}}/Day</p>
+        </div>
+        <div>
+          <ion-button (click)="bookNow()">
+            book now
+          </ion-button>
+        </div>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>

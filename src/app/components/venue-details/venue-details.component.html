@@ -1,0 +1,216 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="ion-toolbar">
+      <div class="ion-toolbar-content">
+      <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+        <ion-title>Venue-details</ion-title>
+      </div>
+      <div class="wishlist">
+        <ion-icon name="heart-outline"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="check-availability">
+    <p>Check for the Availability</p>
+    <ion-icon name="calendar-outline"></ion-icon>
+  </div>
+
+  <div class="date-selector">
+    <div class="date-item" *ngFor="let date of dates" [class.selected]="date === selectedDate"
+      (click)="selectDate(date)">
+      {{ date }}
+    </div>
+  </div>
+
+  <div class="img-content">
+    <img src="assets/images/party-hall1.jpeg" />
+    <div class="ellipsis-content">
+      <div class="img-content-section">
+        <div class="like">
+          <ion-icon name="heart-outline"></ion-icon>
+        </div>
+        <div class="share">
+          <ion-icon name="share-social-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="ellipsis">
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="all-images">
+      <ion-icon name="image-outline"></ion-icon>
+      <p>All Images</p>
+    </div>
+  </div>
+
+  <div class="rating-div">
+    <p>Party Hall</p>
+    <div class="star-rating">
+      <ion-icon name="star-outline"></ion-icon>
+      <span>5.4</span>
+    </div>
+  </div>
+
+  <div class="price-review">
+    <p class="price">₹ 300000 / Day</p>
+    <p class="review">2.234 Reviews</p>
+  </div>
+
+  <div class="location-capacity">
+    <div class="location">
+      <p class="title">Location:</p>
+      <p class="city">Chennai</p>
+    </div>
+
+    <div class="capacity">
+      <p class="title">Capacity:</p>
+      <p class="city">300 Max</p>
+    </div>
+  </div>
+
+  <div class="facility">
+    <p class="para">Facilities</p>
+
+    <div class="facility-content">
+      <div class="facility-content-section">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <p>Parking Availability</p>
+      </div>
+
+      <div class="facility-content-section">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <p>Outdoor Space</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <p class="title">Description</p>
+    <p class="para">
+      A paragraph is a self-contained unit of writing that typically consists of
+      several sentences focused on a single idea or topic. It's a fundamental
+      building block of longer written pieces, helping to organize and present
+      information in a clear, logical way.
+    </p>
+  </div>
+
+  <div class="price-information">
+    <p class="title">Price Information</p>
+
+    <div class="card-grid">
+      <div class="card" *ngFor="let item of cards">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ item.title}}</ion-card-title>
+            <ion-card-subtitle>{{ item.perDay}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{ item.price }}
+          </ion-card-content>
+
+
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="additional-services">
+    <p class="para">Additional Services</p>
+  
+    <div class="additional-services-content">
+      <ion-item *ngFor="let service of additionalServices">
+        <div class="items">
+          <div class="img">
+            <img [src]="service.img" />
+            <div class="content">
+              <p class="para">{{ service.title }}</p>
+              <p class="professionals">{{ service.professionals }}</p>
+              <p class="veg-nonVeg" *ngIf="service.veg">{{ service.veg }}</p>
+            </div>
+          </div>
+          <div class="view-btn">
+            <ion-button [routerLink]="['/catering-services']">View</ion-button>
+          </div>
+        </div>
+      </ion-item>
+    </div>
+  </div>
+  
+
+  <div class="reviews-ratings">
+    <p class="para">Reviews & Ratings</p>
+
+
+    <div class="main-div">
+      <div class="img">
+        <img src="assets/images/girl.jpg" />
+      </div>
+      <div class="content">
+        <p class="name">Anamika Saha</p>
+        <p class="para">Reviewed 10days ago</p>
+      </div>
+      <div class="rating">
+        <ion-icon name="star"></ion-icon>
+        <span class="number">4.5</span>
+      </div>
+    </div>
+    <div class="content-para">
+      <p>Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web
+        development. Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web
+        development. Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web
+        development.</p>
+    </div>
+
+    <div class="see-review">
+      <button>See All Reviews</button>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="galleries">
+    <p class="para">Galleries</p>
+
+    <div class="scrollable-images">
+      <div class="images">
+        <img src="assets/images/image1.jpeg" />
+        <img src="assets/images/image2.jpeg" />
+        <img src="assets/images/image3.jpg" />
+        <img src="assets/images/image4.jpg" />
+        <img src="assets/images/image5.jpeg" />
+        <img src="assets/images/image6.jpg" />
+        <img src="assets/images/image7.jpg" />
+      </div>
+
+      <div class="see-photos">
+        <button>See All Photos</button>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>
+
+  <ion-footer class="footer">
+    <div class="left">
+      <div class="whatsapp">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </div>
+      <div class="call">
+        <ion-icon name="call"></ion-icon>
+      </div>
+    </div>
+
+    <div class="book-now">
+      <ion-button [routerLink]="['/booking-details']">Book Now</ion-button>
+    </div>
+  </ion-footer>

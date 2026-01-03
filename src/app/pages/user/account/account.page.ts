@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-account',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPage implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router, public storageService : StorageService) { }
 
   ngOnInit() {
   }
@@ -22,5 +24,11 @@ export class AccountPage implements OnInit {
   { icon: 'notifications', label: 'Notifications' },
   { icon: 'alert-circle', label: 'About Us' },
 ];
+
+async logout() {
+  await this.storageService.create();
+  await this.storageService.remove('isLoggedIn');
+  this.router.navigate(['/login']);
+}
 
 }

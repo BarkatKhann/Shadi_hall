@@ -23,4 +23,20 @@
 </ion-radio-group>
 
   <ion-button (click)="continue()">Continue</ion-button>
+
+  <!-- Sheet-like block -->
+  <div class="sheet-modal" *ngIf="showSheet">
+    <div class="sheet-header">
+      <div class="drag-bar"></div>
+      <h3>Sheet Modal</h3>
+    </div>
+
+    <ion-list class="list">
+      <ion-item button (click)="closeSheet(provider)" *ngFor="let provider of providerList">
+        <ion-label>{{provider.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" (click)="closeSheet()">Close Sheet</ion-button>
+  </div>
 </ion-grid>

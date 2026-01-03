@@ -40,3 +40,44 @@ ion-button{
   height: 45px;
 
 }
+.sheet-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+  z-index: 1000;
+}
+
+.sheet-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.drag-bar {
+  width: 40px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 10px;
+  margin: 0 auto 10px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.list{
+      max-height: 200px;
+    overflow-x: scroll;
+}
+

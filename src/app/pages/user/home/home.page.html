@@ -1,0 +1,118 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div slot="start" class="menu-logo">
+      <ion-title>Event Plaza</ion-title>
+    </div>
+    <div slot="end" class="notification">
+      <ion-select [(ngModel)]="selectedCity" placeholder="Select City">
+        <ion-select-option *ngFor="let city of cities" [value]="city">
+          {{ city }}
+        </ion-select-option>
+      </ion-select>
+      <ion-icon name="notifications"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="search">
+    <ion-searchbar placeholder="Search for hall"></ion-searchbar>
+    <ion-icon name="mic-circle"></ion-icon>
+  </div>
+
+  <!-- Our services section start -->
+  <ion-grid class="service-grid">
+    <ion-row>
+      <ion-col size="auto" *ngFor="let item of proItem; let i = index" (click)="changeService(item, i)">
+        <div [ngClass]="item.isActive?'active-indicator':'unactive-indicator'">
+          <div lines="none" class="service-div" [ngClass]="item.isActive?'isActive':''">
+            <img [src]="item.pro_img">
+          </div>
+        </div>
+        <ion-label class="label" [ngClass]="item.isActive?'active-color':''">{{ item.name }}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Our services section end -->
+
+  <!-- <ion-row>
+    <ion-col>
+      <div class="horizontal-padding">
+        <div class="slider-wrapper">
+          <div class="slide-track" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+            [style.transition]="'transform 0.4s ease'">
+            <div class="slide-card" *ngFor="let slide of slides" (mouseenter)="nextSlide()">
+              <img [src]="slide.img" class="background-img" />
+              <div class="slide-content">
+                <div class="content">
+                  <h2>{{ slide.title }}</h2>
+                  <p class="para">{{ slide.desc }}</p>
+                  <p class="valid">Offer Valid Until ({{ slide.validUntil }})</p>
+                </div>
+                <br />
+                <br />
+                <div class="book-btn">
+                  <ion-button expand="block">Book now</ion-button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dots">
+            <div *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlide"
+              (click)="goToSlide(i)"></div>
+          </div>
+        </div>
+      </div>
+
+
+    </ion-col>
+  </ion-row>  -->
+
+  <swiper-container [slidesPerView]="1.25" [pagination]="true" *ngIf="offers.length!=0">
+    <swiper-slide *ngFor="let offer of offers">
+      <ion-card [ngStyle]="{'background-image':'url('+offer.pro_img+')'}" class="slider-div">
+        <ion-card-header>
+          <ion-card-title>{{ offer.offer_title }}</ion-card-title>
+          <div class="offer-desc">
+            <ion-card-subtitle>{{offer.description}}</ion-card-subtitle>
+            <ion-card-subtitle>Offer Valid Until ({{ offer.valid_until  | date:'dd-MM-yyyy'  }})</ion-card-subtitle>
+          </div>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button>Book now</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="slider-row">
+    <div class="ion-col">
+      <p class="slider-title">{{selectedCat}} Categories</p>
+      <div class="slider-img">
+        <div class="img" *ngFor="let cat of CategoriesList" (click)="goToSpecificCat(cat)">
+          <img [src]="cat.cate_img" alt="" />
+          <p>{{ cat.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="featured-venues">
+    <ion-row class="ion-justify-content-between ion-align-content-center">
+      <p class="section-title">Featured Venues</p>
+      <p class="section-title viewAll">View All</p>
+    </ion-row>
+    <div class="venue-scroll">
+      <div class="venue-card" *ngFor="let venue of featuredVenues">
+        <div class="image-wrapper">
+          <img [src]="venue.img" alt="{{ venue.name }}" />
+          <div class="rating">{{ venue.rating }}</div>
+          <div class="heart">♡</div>
+        </div>
+        <p class="venue-name">{{ venue.name }}</p>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

@@ -2,7 +2,9 @@
   <ion-toolbar>
     <div class="ion-toolbar">
       <div class="ion-toolbar-content">
-        <ion-icon name="arrow-back" [routerLink]="['/tabs/home']"></ion-icon>
+        <ion-buttons slot="start">
+          <ion-back-button icon="chevron-back"></ion-back-button>
+        </ion-buttons>
         <ion-title>Venue-details</ion-title>
       </div>
       <div class="wishlist">
@@ -121,7 +123,7 @@
 
   <div class="additional-services">
     <p class="para">Additional Services</p>
-  
+
     <div class="additional-services-content">
       <ion-item *ngFor="let service of additionalServices">
         <div class="items">
@@ -140,7 +142,7 @@
       </ion-item>
     </div>
   </div>
-  
+
 
   <div class="reviews-ratings">
     <p class="para">Reviews & Ratings</p>
@@ -198,17 +200,17 @@
 
 </ion-content>
 
-  <ion-footer class="footer">
-    <div class="left">
-      <div class="whatsapp">
-        <ion-icon name="logo-whatsapp"></ion-icon>
-      </div>
-      <div class="call">
-        <ion-icon name="call"></ion-icon>
-      </div>
+<ion-footer class="footer">
+  <div class="left">
+    <div class="whatsapp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
     </div>
+    <div class="call">
+      <ion-icon name="call"></ion-icon>
+    </div>
+  </div>
 
-    <div class="book-now">
-      <ion-button [routerLink]="['/booking-details']">Book Now</ion-button>
-    </div>
-  </ion-footer>
+  <div class="book-now">
+    <ion-button [routerLink]="['/booking-details']">Book Now</ion-button>
+  </div>
+</ion-footer>

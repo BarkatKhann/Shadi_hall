@@ -7,7 +7,7 @@ export const environment = {
   baseUrl:'http://localhost:8080/user',
   adMobIosAdId:'',
   adMobAndroidAdId:'ca-app-pub-1900198453500216~6169900448',
-  localData:true
+  localData: false
 };
 
 /*

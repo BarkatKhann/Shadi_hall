@@ -1,0 +1,43 @@
+ion-content {
+    --background: #edf0f6;
+
+    .mainDiv {
+        padding: 16px;
+        .label{
+            margin-top: 0px;
+        }
+    }
+
+    .itm {
+        border-radius: 8px;
+    }
+    
+    .toggleItm {
+        margin: 15px 0px;
+        border-radius: 8px;
+        --padding-top: 10px;
+        --padding-bottom: 10px;
+
+        ion-icon {
+            margin: 0px;
+            color: var(--ion-color-primary);
+        }
+
+        ion-label {
+            flex: auto;
+            margin: 10px;
+
+            p {
+                font-weight: 600;
+                font-size: 16px;
+                color: black;
+                text-wrap: initial;
+            }
+        }
+
+        ion-toggle {
+            padding: 0px;
+            margin-top: -15px;
+        }
+    }
+}

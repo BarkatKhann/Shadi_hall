@@ -17,7 +17,8 @@ export class AuthService {
       "email": data.email,
       "password": data.Psw,
       "phone": data.phone,
-      "role": data.role
+      "role": data.role,
+      "provider_type":data.provider_type
     }
     if(environment.localData){
       return this.http.get('assets/localData/registerUser.json');
@@ -34,8 +35,13 @@ export class AuthService {
   login(data:any){
     const Userdata = {
       "email": data.email,
-      "password": data.password,
+      "password": data.Psw,
     }
-    return this.http.post(environment.baseUrl+'/login',Userdata,{headers:{'TokenAuth':'false'}})
+     if(environment.localData){
+      return this.http.get('assets/localData/loginUser.json');
+    }
+    else{
+      return this.http.post(environment.baseUrl+'/login',Userdata,{headers:{'TokenAuth':'false'}})
+    }
   }
 }
